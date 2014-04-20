@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Netmageditor</title>
+  
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="container">
+    <h1>Netmageditor</h1>
+    
+    <div id="toolbar">
+      <ul>
+        <li data-command="bold">Bold</li>
+        <li data-command="italic">Italic</li>
+        <li data-command="strikethrough">Strikethrough</li>
+        <li data-command="undo">Undo</li>
+        <li data-command="redo">Redo</li>
+      </ul>
+    </div>
+
+    <div id="editor" contenteditable="true">
+
+    </div>
+    
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+  <script src="netmageditor.js"></script>
+  <script>
+    var editor = new NetMagEditor();
+  </script>
+</body>
+</html>
