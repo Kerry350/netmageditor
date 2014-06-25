@@ -64,6 +64,18 @@ NetMagEditor.prototype = {
   },
 
   setActiveButtonStates: function() {
-    
+    var buttons = this.toolbar.querySelectorAll('li');
+
+    for (var i = 0, l = buttons.length; i < l; i++) {
+      var button = buttons[i];
+      var command = button.getAttribute('data-command');
+      var active = document.queryCommandState(command);
+      
+      if (active) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    }   
   }
 };
