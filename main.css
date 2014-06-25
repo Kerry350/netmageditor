@@ -48,7 +48,8 @@ body {
   text-transform: uppercase;
 }
 
-#toolbar li:hover {
+#toolbar li:hover,
+#toolbar li:active {
   background-color: #9badcc;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9badcc), color-stop(100%, #687fa6));
   background-image: -webkit-linear-gradient(top, #9badcc, #687fa6);
