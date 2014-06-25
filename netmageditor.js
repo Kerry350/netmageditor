@@ -1,13 +1,3 @@
-var matchesSelectorFn = function() {
-  var fn = document.querySelector('body').webkitMatchesSelector
-  || document.querySelector('body').mozMatchesSelector
-  || document.querySelector('body').msMatchesSelector
-  || document.querySelector('body').oMatchesSelector
-  || document.querySelector('body').matchesSelector
-  
-  return fn;
-}(); 
-
 function NetMagEditor() {
   this.savedRange = null;
   this.init();
@@ -34,7 +24,7 @@ NetMagEditor.prototype = {
     */
     this.toolbar.addEventListener('mousedown', function(e) {
       // Delegate the events
-      if (matchesSelectorFn('li')) {
+      if (e.target && e.target.nodeName === "LI") {
         /* 
           We save the current range (if any) on mousedown as this
           event will cause the text to become de-selected within 
@@ -47,7 +37,7 @@ NetMagEditor.prototype = {
 
     this.toolbar.addEventListener('mouseup', function(e) {
       // Delegate the events
-      if (matchesSelectorFn('li')) {
+      if (e.target && e.target.nodeName === "LI") {
         this.applySavedRange();
         var command = e.target.getAttribute('data-command');
         this.applyFormatting(command);
